@@ -1,0 +1,24 @@
+Today I did not build anything.
+I only showed up.
+That is enough for now.
+
+AWS account is ready 
+I chose to stop consciously today instead of forcing myself.
+
+Day 02: Launched my first EC2 instance and observed it running
+
+I Launched and controlled an EC2 instance without stress.
+
+Day 03:Successfully SSHed into EC2 and ran basic Linux commands.
+
+I Accessed a cloud Linux server on my own and felt in control 
+
+Day 04: I deployed a web service on a cloud server and accessed it publicly.
+
+Day 05:Controlled Nginx service lifecycle (stop/start/enable).
+
+I Controlled a production service without fear and understood its impact.
+
+Day 06: Simulated an outage, Diagnosed service state, and restored nginx successfully.
+
+Week 1 complete, I operated cloud infrastructure, handled failure, and stayed consistent.
