@@ -1,0 +1,31 @@
+#!/bin/bash
+set -e
+
+echo "Updating system..."
+sudo yum update -y
+
+# Install Nginx only if not already installed
+if ! rpm -q nginx > /dev/null 2>&1; then
+    echo "Installing Nginx..."
+    sudo yum install nginx -y
+else
+    echo "Nginx already installed"
+fi
+
+# Start Nginx only if not running
+if ! systemctl is-active --quiet nginx; then
+    echo "Starting Nginx..."
+    sudo systemctl start nginx
+else
+    echo "Nginx already running"
+fi
+
+# Enable Nginx only if not enabled
+if ! systemctl is-enabled --quiet nginx; then
+    echo "Enabling Nginx..."
+    sudo systemctl enable nginx
+else
+    echo "Nginx already enabled"
+fi
+
+echo "Setup completed safely"
