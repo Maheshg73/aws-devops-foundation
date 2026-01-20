@@ -20,3 +20,8 @@ Script can be safely executed multiple times without side effects.
 - Script validates root privileges
 - Ensures supported OS before execution
 - Prevents accidental misuse
+
+## Configuration Options
+- `NGINX_PACKAGE`: Web server package name
+- `SERVICE_NAME`: Service to manage
+- `WEB_ROOT`: Web root directory
