@@ -15,3 +15,8 @@ Script can be safely executed multiple times without side effects.
 ## Validation
 - Nginx service status verified
 - Log file reviewed
+
+## Safety Guards
+- Script validates root privileges
+- Ensures supported OS before execution
+- Prevents accidental misuse
