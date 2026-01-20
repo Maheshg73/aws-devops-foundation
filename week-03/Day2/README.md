@@ -25,3 +25,7 @@ Script can be safely executed multiple times without side effects.
 - `NGINX_PACKAGE`: Web server package name
 - `SERVICE_NAME`: Service to manage
 - `WEB_ROOT`: Web root directory
+## CI/CD Compatibility
+- Runs non-interactively
+- Uses explicit exit codes
+- Suitable for Jenkins and GitHub Actions
