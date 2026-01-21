@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Maheshg73/aws-devops-foundation.git'
+            }
+        }
+
+        stage('Hello DevOps') {
+            steps {
+                echo 'Jenkins pipeline is running successfully'
+            }
+        }
+    }
+}
