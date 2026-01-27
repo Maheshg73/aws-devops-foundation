@@ -9,9 +9,12 @@ pipeline {
             }
         }
 
-        stage('Hello DevOps') {
+        stage('Provisioning Script') {
             steps {
-                echo 'Jenkins pipeline is running successfully'
+                sh '''
+                  chmod +x week-01/setup.sh
+                  ./week-01/setup.sh
+                '''
             }
         }
     }
