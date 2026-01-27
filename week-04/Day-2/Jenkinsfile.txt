@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(
+            name: 'ENVIRONMENT',
+            choices: ['dev', 'test', 'prod'],
+            description: 'Target environment'
+        )
+    }
+
     environment {
         DEMO_SECRET = credentials('demo-secret')
     }
@@ -13,16 +21,19 @@ pipeline {
             }
         }
 
-        stage('Use Secret Securely') {
+        stage('Environment Validation') {
             steps {
                 sh '''
-                  echo "Secret injected securely"
-                  echo "Length of secret is ${#DEMO_SECRET}"
+                  echo "Running pipeline for environment: ${ENVIRONMENT}"
+
+                  if [ "${ENVIRONMENT}" = "prod" ]; then
+                    echo "Production safeguards enabled"
+                  fi
                 '''
             }
         }
 
-        stage('Provisioning Script') {
+        stage('Provisioning') {
             steps {
                 sh '''
                   chmod +x week-01/setup.sh
