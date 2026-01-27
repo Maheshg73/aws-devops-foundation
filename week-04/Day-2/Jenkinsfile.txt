@@ -1,11 +1,24 @@
 pipeline {
     agent any
 
+    environment {
+        DEMO_SECRET = credentials('demo-secret')
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/Maheshg73/aws-devops-foundation.git'
+            }
+        }
+
+        stage('Use Secret Securely') {
+            steps {
+                sh '''
+                  echo "Secret injected securely"
+                  echo "Length of secret is ${#DEMO_SECRET}"
+                '''
             }
         }
 
